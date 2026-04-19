@@ -502,21 +502,21 @@ em, i { font-style: italic; }
     padding-left: 0.6rem;       /* décolle le bloc langue du menu */
     margin-right: -0.4rem;      /* décale FR/EN/IG un peu vers la droite, vers le bord */
   }
-  /* CTA du hero empilés verticalement, largeur contenue pour ne pas déborder */
+  /* CTA du hero empilés verticalement, largeur bornée pour ne pas mordre le logo */
   .hero-cta {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
+    align-items: stretch;
+    gap: 0.55rem;
+    max-width: 14rem;   /* garde-fou dur, aucune chance de déborder à droite */
   }
   .hero-cta .btn {
-    padding: 0.65rem 1.1rem;
-    font-size: 0.7rem;
-    min-height: 42px;
-    letter-spacing: 0.16em;
-    max-width: min(100%, 17rem);
-    width: auto;
+    padding: 0.6rem 0.95rem;
+    font-size: 0.64rem;
+    min-height: 40px;
+    letter-spacing: 0.12em;
+    width: 100%;        /* les deux boutons occupent la même largeur, propre */
   }
-  .hero-cta .btn::after { font-size: 0.95rem; }
+  .hero-cta .btn::after { font-size: 0.88rem; }
   /* on replie aussi un peu le logo filigrane pour laisser les CTA respirer */
   .hero-mark {
     width: clamp(200px, 52vw, 280px);
@@ -555,16 +555,8 @@ em, i { font-style: italic; }
   pointer-events: none;
   z-index: 0;
 }
-.hero::after {
-  /* lignes verticales discrètes */
-  content: "";
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(245, 241, 234, 0.04) 1px, transparent 1px);
-  background-size: 33.333% 100%;
-  pointer-events: none;
-  z-index: 0;
-}
+/* anciennement : lignes verticales discrètes (retirées : elles coupaient
+   le hero en 3 visuellement, effet non désiré) */
 .hero > * { position: relative; z-index: 1; }
 
 .hero-inner { max-width: 880px; }
