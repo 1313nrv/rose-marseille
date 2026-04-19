@@ -21,8 +21,6 @@
       ok_contact:"Message bien reçu. Nous vous répondons sous 24 h.",
       ok_news:   "Merci, vous êtes inscrit·e à notre courrier.",
       err:       "Une erreur est survenue. Merci de réessayer.",
-      menu_open: "Ouvrir le menu",
-      menu_close:"Fermer le menu",
       back_top:  "Retour en haut"
     },
     en: {
@@ -33,8 +31,6 @@
       ok_contact:"Message received. We’ll reply within 24 hours.",
       ok_news:   "Thanks, you’re subscribed to our letter.",
       err:       "Something went wrong. Please try again.",
-      menu_open: "Open menu",
-      menu_close:"Close menu",
       back_top:  "Back to top"
     }
   }[lang];
@@ -57,42 +53,6 @@
     const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-  }
-
-  // ---------- Mobile drawer
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".nav-primary");
-  if (toggle && nav) {
-    toggle.setAttribute("aria-label", T.menu_open);
-    toggle.setAttribute("aria-expanded", "false");
-
-    const open = () => {
-      document.body.classList.add("nav-open", "no-scroll");
-      toggle.setAttribute("aria-expanded", "true");
-      toggle.setAttribute("aria-label", T.menu_close);
-      const firstLink = nav.querySelector("a");
-      if (firstLink) firstLink.focus({ preventScroll: true });
-    };
-    const close = () => {
-      document.body.classList.remove("nav-open", "no-scroll");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", T.menu_open);
-    };
-    const toggleFn = () => {
-      document.body.classList.contains("nav-open") ? close() : open();
-    };
-
-    toggle.addEventListener("click", toggleFn);
-    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
-    document.addEventListener("keydown", e => {
-      if (e.key === "Escape" && document.body.classList.contains("nav-open")) {
-        close();
-        toggle.focus();
-      }
-    });
-    window.matchMedia("(min-width: 881px)").addEventListener("change", e => {
-      if (e.matches) close();
-    });
   }
 
   // ---------- Reveal (IntersectionObserver)
