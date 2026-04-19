@@ -496,7 +496,12 @@ em, i { font-style: italic; }
     letter-spacing: 0.12em;
   }
   .nav-primary ul { gap: clamp(0.7rem, 2.5vw, 1.2rem); }
-  .lang-switch { font-size: 0.68rem; gap: 0.3rem; }
+  .lang-switch {
+    font-size: 0.68rem;
+    gap: 0.55rem;              /* plus d'air entre FR · EN · IG */
+    padding-left: 0.6rem;       /* décolle le bloc langue du menu */
+    margin-right: -0.4rem;      /* décale FR/EN/IG un peu vers la droite, vers le bord */
+  }
 }
 
 /* Très petit mobile (≤ 380px) : on masque le bouton Réserver pour libérer la ligne */
