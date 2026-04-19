@@ -51,8 +51,9 @@
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 43.2916, "longitude": 5.3855 },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "12:00", "closes": "14:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "19:30", "closes": "22:30" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "12:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "19:30", "closes": "22:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "18:30", "closes": "23:30" }
   ],
   "acceptsReservations": "https://www.opentable.fr/r/rose-marseille",
   "sameAs": ["https://www.instagram.com/rose.marseille"]
@@ -142,9 +143,16 @@
       <ul class="events-list">
         <li class="event reveal" data-delay="1">
           <p class="event-date"><span class="day">15</span> May · 7:30 pm</p>
-          <h3 class="event-title">Four hands with Anne Coline</h3>
-          <p class="event-desc">A dinner in two voices with the chef of Amour (Paris). Single menu, natural-wine pairings, 24 seats.</p>
-          <span class="event-tag">One-night dinner · €85</span>
+          <h3 class="event-title">ROSE @ Aux Bons Faiseurs</h3>
+          <p class="event-desc">A takeover in the kitchens of a 6th-arrondissement wine bar. Opening, growers by the glass, seasonal street-food.</p>
+          <ul class="event-menu">
+            <li>Panisses, aïoli</li>
+            <li>Octopus hot-dog · lemon, fennel, tomato, basil</li>
+            <li>Duck pitra · sesame, raspberry, cucumber, mint, red cabbage</li>
+            <li>Aubergine · spring onion, peanut, pomegranate, red onion, feta emulsion</li>
+            <li>Gorgonzola spoon · morello cherry, hazelnut, rocket pesto</li>
+          </ul>
+          <span class="event-tag">88 rue d’Italie · 13006</span>
         </li>
         <li class="event reveal" data-delay="2">
           <p class="event-date"><span class="day">06</span> June · 12:30 pm</p>
@@ -171,7 +179,7 @@
         </div>
         <div>
           <h3>Hours</h3>
-          <p>Tuesday — Saturday<br>12:00–14:00 · 19:30–22:30<br><span style="color:var(--c-muted)">Closed Sun &amp; Mon</span></p>
+          <p>Monday — Friday<br>12:00–14:00 · 19:30–22:30<br>Saturday dinner · 18:30–23:30<br><span style="color:var(--c-muted)">Closed Sunday</span></p>
         </div>
         <div>
           <h3>Book</h3>

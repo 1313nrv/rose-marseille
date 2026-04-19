@@ -799,8 +799,26 @@ body.nav-open .nav-toggle span::after  { transform: translateY(-7px) rotate(-45d
   color: var(--c-muted);
   margin: 0 0 var(--s-3);
   line-height: 1.6;
+}
+.event-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--s-3);
+  border-top: 1px solid var(--c-line);
+  display: grid;
+  gap: 0.35rem;
   flex: 1;
 }
+.event-menu li {
+  font-family: var(--ff-serif);
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--c-graphite-2);
+  padding-top: 0.45rem;
+  position: relative;
+}
+.event-menu li:first-child { padding-top: var(--s-3); }
+.event-menu li + li { border-top: 1px dashed var(--c-line); }
 .event-tag {
   display: inline-block;
   font-family: var(--ff-sans);
