@@ -442,57 +442,54 @@ em, i { font-style: italic; }
 
 .header-cta { display: inline-flex; align-items: center; gap: var(--s-3); }
 
-/* Drawer mobile */
-.nav-toggle {
-  display: none;
-  width: 46px; height: 46px;
-  align-items: center; justify-content: center;
-  color: var(--c-graphite);
-}
-.nav-toggle span,
-.nav-toggle span::before,
-.nav-toggle span::after {
-  content: "";
-  display: block;
-  width: 22px; height: 1.4px;
-  background: currentColor;
-  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
-}
-.nav-toggle span { position: relative; }
-.nav-toggle span::before { position: absolute; top: -7px; left: 0; }
-.nav-toggle span::after  { position: absolute; top:  7px; left: 0; }
-body.nav-open .nav-toggle span { background: transparent; }
-body.nav-open .nav-toggle span::before { transform: translateY(7px) rotate(45deg); }
-body.nav-open .nav-toggle span::after  { transform: translateY(-7px) rotate(-45deg); }
+/* Nav-toggle masqué — la nav reste inline sur toutes tailles d'écran */
+.nav-toggle { display: none !important; }
 
+/* Tablette (≤ 900px) : on garde la nav en ligne, on serre les tailles */
 @media (max-width: 900px) {
-  .nav-toggle { display: inline-flex; }
+  .header-inner {
+    flex-wrap: wrap;
+    row-gap: var(--s-2);
+    gap: var(--s-3);
+  }
   .nav-primary {
-    position: fixed;
-    inset: var(--hdr-h) 0 0 0;
-    background: var(--c-ivory-2);
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: var(--s-5) var(--s-4) var(--s-6);
-    transform: translateX(100%);
-    transition: transform var(--dur) var(--ease);
-    overflow-y: auto;
-    border-top: 1px solid var(--c-line);
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding-bottom: var(--s-2);
   }
-  body.nav-open .nav-primary { transform: translateX(0); }
-  .nav-primary ul { flex-direction: column; gap: var(--s-3); width: 100%; }
+  .nav-primary ul {
+    gap: clamp(0.9rem, 3vw, 1.6rem);
+  }
   .nav-primary a {
-    display: block;
-    font-family: var(--ff-serif);
-    font-size: 1.8rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    text-transform: none;
-    padding: var(--s-2) 0;
-    border-bottom: 1px solid var(--c-line);
+    font-size: 0.72rem;
+    padding: 0.25rem 0;
   }
-  .nav-primary a::after { display: none; }
-  .lang-switch { margin-top: var(--s-3); align-self: flex-start; }
+  .header-cta .btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile (≤ 600px) : on réduit encore pour tenir sur une largeur étroite */
+@media (max-width: 600px) {
+  :root { --hdr-h: auto; }
+  .site-header { min-height: 0; }
+  .header-inner {
+    padding-top: var(--s-2);
+    padding-bottom: var(--s-1);
+  }
+  .nav-primary a {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+  .nav-primary ul { gap: clamp(0.7rem, 2.5vw, 1.2rem); }
+  .lang-switch { font-size: 0.68rem; gap: 0.3rem; }
+}
+
+/* Très petit mobile (≤ 380px) : on masque le bouton Réserver pour libérer la ligne */
+@media (max-width: 380px) {
   .header-cta .btn { display: none; }
 }
 
