@@ -429,6 +429,16 @@ em, i { font-style: italic; }
 .lang-switch a:hover { color: var(--c-graphite); }
 .lang-switch a[aria-current="true"] { color: var(--c-blue); font-weight: 600; }
 .lang-switch span { opacity: 0.35; }
+.lang-switch .ig-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  line-height: 0;
+  transition: color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.lang-switch .ig-link svg { display: block; }
+.lang-switch .ig-link:hover { color: var(--c-rose-deep); transform: translateY(-1px); }
 
 .header-cta { display: inline-flex; align-items: center; gap: var(--s-3); }
 
