@@ -572,8 +572,12 @@ em, i { font-style: italic; }
   right: clamp(-80px, -4vw, 30px);
   bottom: clamp(-50px, -2vw, 40px);
   width: clamp(260px, 38vw, 460px);
-  opacity: 0.08;
+  opacity: 0.14;
   z-index: 0;
+  /* Reprend la teinte sable/ivoire du dégradé (#EFE7DB) :
+     brightness(0) aplatit en noir, invert(1) en blanc,
+     la pile sepia/hue-rotate chauffe légèrement vers l'ivoire. */
+  filter: brightness(0) invert(1) sepia(0.35) saturate(0.55) hue-rotate(335deg) brightness(0.98);
 }
 
 .hero--short { padding-block: clamp(3rem, 5.5vw, 4.5rem); }
