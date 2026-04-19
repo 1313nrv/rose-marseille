@@ -328,10 +328,16 @@ em, i { font-style: italic; }
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  color: var(--c-rose-deep);
+  line-height: 1;
+  transition: opacity var(--dur-fast) var(--ease);
 }
-.brand:hover { color: var(--c-rose-deep); }
-.brand img { height: 34px; width: auto; }
+.brand:hover { opacity: 0.82; }
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+/* Fallback texte si le PNG wordmark n'est pas encore pos\u00e9 */
 .brand-text {
   display: inline-flex;
   flex-direction: column;
@@ -350,6 +356,9 @@ em, i { font-style: italic; }
   color: var(--c-blue);
   margin-top: 5px;
   text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  .brand-logo { height: 36px; }
 }
 
 .nav-primary { display: flex; align-items: center; gap: var(--s-4); }
