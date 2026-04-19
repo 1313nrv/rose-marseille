@@ -10,6 +10,6 @@
   "lang": "fr",
   "icons": [
     { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "assets/img/logo-rose.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "assets/img/logo-rose.png", "sizes": "any", "type": "image/png", "purpose": "any" }
   ]
 }
