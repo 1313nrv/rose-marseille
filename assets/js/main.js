@@ -5,7 +5,7 @@
   // ---------- Config centralisée
   const CONFIG = {
     opentable: "https://www.opentable.fr/r/rose-marseille",
-    instagram: "https://www.instagram.com/rose.castellanne",
+    instagram: "https://www.instagram.com/rose.castellane",
     email:     "bonjour@rose-marseille.fr",
     phone:     "+33491000000"
   };
