@@ -502,6 +502,22 @@ em, i { font-style: italic; }
     padding-left: 0.6rem;       /* décolle le bloc langue du menu */
     margin-right: -0.4rem;      /* décale FR/EN/IG un peu vers la droite, vers le bord */
   }
+  /* CTA du hero plus compacts pour ne pas mordre sur le logo en filigrane */
+  .hero-cta { gap: 0.55rem; }
+  .hero-cta .btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.66rem;
+    min-height: 40px;
+    letter-spacing: 0.14em;
+  }
+  .hero-cta .btn::after { font-size: 0.9rem; }
+  /* on replie aussi un peu le logo filigrane pour laisser les CTA respirer */
+  .hero-mark {
+    width: clamp(200px, 52vw, 280px);
+    right: clamp(-100px, -8vw, -30px);
+    bottom: clamp(-60px, -4vw, 10px);
+    opacity: 0.12;
+  }
 }
 
 /* Très petit mobile (≤ 380px) : on masque le bouton Réserver pour libérer la ligne */
