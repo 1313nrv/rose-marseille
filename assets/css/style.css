@@ -118,14 +118,25 @@ em, i { font-style: italic; }
 
 ::selection { background: var(--c-rose); color: var(--c-graphite); }
 
-/* ---------- A11y */
+/* ---------- A11y — skip-link totalement masqué sauf au focus clavier */
 .skip-link {
-  position: absolute; top: -40px; left: 8px; z-index: 1000;
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link:focus {
+  position: fixed;
+  top: 8px; left: 8px;
+  width: auto; height: auto;
+  clip: auto; margin: 0; overflow: visible;
   background: var(--c-graphite); color: var(--c-ivory);
   padding: 10px 14px; border-radius: var(--radius);
-  transition: top var(--dur-fast) var(--ease);
+  z-index: 1000;
 }
-.skip-link:focus { top: 8px; color: var(--c-ivory); }
 
 :focus-visible {
   outline: 2px solid var(--c-blue);
