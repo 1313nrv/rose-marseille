@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#EDA7C4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="ROSE — emblème">
+  <!-- Cercle principal -->
+  <circle cx="100" cy="100" r="78" />
+  <!-- Ligne horizon -->
+  <line x1="22" y1="100" x2="178" y2="100" />
+  <!-- Soleil (demi-cercle) -->
+  <path d="M70 100 A30 30 0 0 1 130 100" fill="#EDA7C4" stroke="none"/>
+  <!-- Rayons ondulés internes -->
+  <path d="M62 95 q3 -12 6 0 q3 -12 6 0" />
+  <path d="M80 82 q3 -12 6 0 q3 -12 6 0" />
+  <path d="M98 78 q3 -12 6 0 q3 -12 6 0" />
+  <path d="M116 82 q3 -12 6 0 q3 -12 6 0" />
+  <path d="M134 95 q3 -10 6 0" />
+  <!-- Rayons extérieurs -->
+  <line x1="100" y1="12" x2="100" y2="22" />
+  <line x1="70"  y1="18" x2="73"  y2="27" />
+  <line x1="130" y1="18" x2="127" y2="27" />
+  <line x1="42"  y1="38" x2="48"  y2="45" />
+  <line x1="158" y1="38" x2="152" y2="45" />
+  <!-- Vagues -->
+  <path d="M30 118 q10 -8 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" />
+  <path d="M30 132 q10 -8 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" />
+  <!-- Poisson -->
+  <path d="M82 162 q14 -12 30 0 q-5 4 -10 4 q-10 0 -20 -4 z" />
+  <path d="M112 162 l10 -6 l0 12 z" />
+  <circle cx="88" cy="160" r="1.5" fill="#EDA7C4" stroke="none"/>
+</svg>

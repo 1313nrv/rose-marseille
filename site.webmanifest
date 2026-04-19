@@ -1,0 +1,15 @@
+{
+  "name": "ROSE — Marseille",
+  "short_name": "ROSE",
+  "description": "Bistronomie marseillaise · 8 rue Louis Maurel, 13006 Marseille.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F5F1EA",
+  "theme_color": "#1E3AAE",
+  "lang": "fr",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/img/logo-rose.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
