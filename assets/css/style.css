@@ -502,21 +502,22 @@ em, i { font-style: italic; }
     padding-left: 0.6rem;       /* décolle le bloc langue du menu */
     margin-right: -0.4rem;      /* décale FR/EN/IG un peu vers la droite, vers le bord */
   }
-  /* CTA du hero empilés verticalement, largeur bornée pour ne pas mordre le logo */
+  /* CTA du hero empilés verticalement, largeur franchement bornée
+     pour laisser tout le logo filigrane respirer à droite */
   .hero-cta {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.55rem;
-    max-width: 14rem;   /* garde-fou dur, aucune chance de déborder à droite */
+    gap: 0.5rem;
+    max-width: 11rem;   /* plafond dur, loin du logo à droite */
   }
   .hero-cta .btn {
-    padding: 0.6rem 0.95rem;
-    font-size: 0.64rem;
-    min-height: 40px;
-    letter-spacing: 0.12em;
-    width: 100%;        /* les deux boutons occupent la même largeur, propre */
+    padding: 0.55rem 0.75rem;
+    font-size: 0.6rem;
+    min-height: 38px;
+    letter-spacing: 0.1em;
+    width: 100%;        /* les deux boutons occupent la même largeur */
   }
-  .hero-cta .btn::after { font-size: 0.88rem; }
+  .hero-cta .btn::after { font-size: 0.82rem; }
   /* on replie aussi un peu le logo filigrane pour laisser les CTA respirer */
   .hero-mark {
     width: clamp(200px, 52vw, 280px);
