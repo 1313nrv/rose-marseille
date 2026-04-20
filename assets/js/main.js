@@ -6,8 +6,7 @@
   const CONFIG = {
     opentable: "https://www.opentable.fr/r/rose-marseille",
     instagram: "https://www.instagram.com/rose.castellane",
-    email:     "bonjour@rose-marseille.fr",
-    phone:     "+33491000000"
+    email:     "bonjour@rose-marseille.fr"
   };
   window.ROSE = CONFIG;
 
