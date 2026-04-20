@@ -755,11 +755,22 @@ em, i { font-style: italic; }
   margin: 0 0 var(--s-3);
   line-height: 1.6;
 }
+.event-menu-label {
+  display: block;
+  margin: var(--s-3) 0 0.5rem;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--c-line);
+  font-family: var(--ff-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--c-blue);
+}
 .event-menu {
   list-style: none;
-  padding: var(--s-3) 0 0;
+  padding: 0;
   margin: 0 0 var(--s-3);
-  border-top: 1px solid var(--c-line);
   display: grid;
   gap: 0.5rem;
   flex: 1;
