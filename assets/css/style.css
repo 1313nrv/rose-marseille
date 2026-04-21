@@ -814,9 +814,10 @@ p { margin: 0 0 1rem; }
   }
   .brand { order: 1; }
   .header-cta { order: 2; gap: 10px; }
-  .nav-primary { order: 3; flex: 1 0 100%; justify-content: center; }
+  .nav-primary { order: 3; flex: 1 0 100%; justify-content: space-between; }
   .nav-primary ul {
-    flex-wrap: wrap; justify-content: center;
+    flex-wrap: wrap; justify-content: space-between;
+    width: 100%;
     font-size: 0.68rem; gap: 14px 20px;
   }
   .header-cta .ig-link { display: none; } /* IG déjà dans le footer — on gagne de la place */
@@ -863,8 +864,8 @@ p { margin: 0 0 1rem; }
 @media (max-width: 640px) {
   .wrap { padding: 0 1.25rem; }
 
-  /* Header très compact */
-  .site-header .wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+  /* Header très compact : memes bords que le reste de la page pour alignement */
+  .site-header .wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
   .header-inner { padding: 10px 0; gap: 8px 10px; }
   .brand-logo { height: 68px; }
   .header-cta .btn { padding: 10px 16px; font-size: 0.68rem; letter-spacing: 0.12em; }
