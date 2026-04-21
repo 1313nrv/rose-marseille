@@ -17,8 +17,8 @@ Produit : site statique pur, zéro dépendance, zéro build step. On édite des 
 - **HTML5 sémantique**, une page par vue, pas de SPA.
 - **CSS vanilla** dans `assets/css/style.css` (design tokens en `:root`, responsive mobile-first, nav inline sur toutes tailles — **pas de drawer / hamburger**).
 - **JS vanilla** dans `assets/js/main.js` : year injection, URL OpenTable centralisée, shadow header au scroll, reveal via IntersectionObserver, back-to-top, validation forms. Pas de framework, pas de dépendance npm.
-- **Polices self-hosted** en `.woff2` dans `assets/fonts/` : **Cormorant** (serif display) + **Inter** (sans). Préchargées dans le `<head>`.
-- **Pas de cookies, pas de trackers, pas d'analytics.** C'est une promesse affichée dans le pied de page, ne pas la rompre.
+- **Polices** : **Fraunces** (display serif, titres, italiques), **Crimson Pro** (serif texte long éventuel), **Caveat** (script, petits accents seulement) servies par **Google Fonts** ; **Inter** (sans) auto-hébergée en `.woff2` dans `assets/fonts/`. Google Fonts casse légèrement la promesse « sans cookies ni traceurs » côté réseau (requêtes cross-origin) — à assumer ou à réinternaliser plus tard si besoin.
+- **Pas de cookies, pas de trackers, pas d'analytics** côté app. C'est une promesse affichée dans le pied de page, ne pas la rompre.
 - **SEO** : JSON-LD Restaurant + Menu + Event + BreadcrumbList + WebSite, OG, Twitter card, hreflang croisés.
 
 ---
@@ -39,8 +39,8 @@ Produit : site statique pur, zéro dépendance, zéro build step. On édite des 
 ├── assets/
 │   ├── css/style.css
 │   ├── js/main.js
-│   ├── fonts/            *.woff2 self-hosted
-│   └── img/              logos PNG (logo-blue, logo-rose, logo-wordmark)
+│   ├── fonts/            Inter-*.woff2 self-hosted
+│   └── img/              logos PNG (logo-rose, logo-blue, logo-wordmark, logo-combo-pink)
 ├── favicon.svg
 ├── robots.txt
 ├── sitemap.xml
@@ -52,55 +52,66 @@ Produit : site statique pur, zéro dépendance, zéro build step. On édite des 
 
 ---
 
-## Design system
+## Design system (DA validée, version Mix)
 
 ### Palette (tokens CSS en `:root`)
 
 | Token | Valeur | Usage |
 |---|---|---|
-| `--c-blue-ink` | `#0E1A4E` | nuit profonde, fond des sections blues |
-| `--c-blue` | `#1E3AAE` | **accent signature** (liens, boutons, accents-blue) |
-| `--c-blue-2` | `#243AA0` | |
-| `--c-blue-dark` | `#0A123A` | |
-| `--c-rose` | `#EDA7C4` | rose de marque, sélection, accent |
-| `--c-rose-soft` | `#F6D5E2` | |
-| `--c-rose-deep` | `#C97FA3` | accent-rose dans le texte, hovers IG |
-| `--c-ivory` | `#F5F1EA` | fond principal |
-| `--c-ivory-2` | `#FBF8F2` | variante plus claire |
-| `--c-sand` | `#EFE7DB` | `section--sand` (bandeau événements home + pages) |
-| `--c-graphite` | `#131325` | texte principal |
-| `--c-graphite-2` | `#2A2A3D` | |
-| `--c-line` | `#E2D9CC` | filets |
-| `--c-muted` | `#6C6C7A` | texte secondaire |
+| `--c-navy` | `#1B2A5E` | bleu nuit signature — hero, sections sombres, theme-color |
+| `--c-navy-deep` | `#14204A` | bleu plus profond, bandeaux « practical » |
+| `--c-navy-soft` | `#2A3C7A` | variantes liens/hover |
+| `--c-ink` | `#1B2350` | texte principal sur fond clair |
+| `--c-ink-soft` | `#4B5478` | texte secondaire |
+| `--c-pink` | `#F5A8C8` | rose de marque (hero-mark, accents clairs) |
+| `--c-pink-deep` | `#EE7AA8` | rose plus dense (accents texte, filets menu-card) |
+| `--c-pink-soft` | `#F8C5D7` | pastels |
+| `--c-cream` | `#EEE7DA` | fond principal crème |
+| `--c-cream-deep` | `#E6DECB` | sous-fonds |
+| `--c-paper` | `#F2ECE0` | papier (footer-card) |
+| `--c-white` | `#FFFCF6` | blanc cassé |
 
-`theme-color` meta = `#1E3AAE`.
+Alias de compat (`--c-blue` = `--c-ink`, `--c-rose` = `--c-pink`, etc.) conservés pour éviter de tout casser ; privilégier les nouveaux tokens pour toute nouvelle règle.
+
+`theme-color` meta = `#1B2A5E`.
 
 ### Typographies
 
-- **Serif display** : Cormorant (400 / 400 italic / 500 / 600). Titres h1-h4, em, event-title, brand-text.
-- **Sans** : Inter (400 / 500 / 600). Corps, nav, labels, boutons.
+- **Display** : **Fraunces** (300 / 400 / 500, italic inclus, opsz fluide). Titres h1-h4, `em`, event-title, eyebrow serif.
+- **Serif texte** : **Crimson Pro** (400 / 500, italic). Utilisé pour de la copie « lettre » si besoin.
+- **Script** : **Caveat** (400 / 600). **Petits accents seulement** — signatures, micro-notes en pied, jamais de titres ni de paragraphes complets.
+- **Sans** : **Inter** (400 / 500 / 600). Corps, nav, labels, boutons.
 - Échelle fluide via `clamp()` dans `--fs-xs` → `--fs-2xl`.
 - Feature settings `"ss01", "cv11"` activés sur `body`.
+
+### Règles d'italique
+- Fraunces italic est réservée aux **mots-clés de ligne** (ex : *mémoire*, *à la table de Rose*, *courte*). Un ou deux mots par titre, pas plus.
+- L'italique est teintée en rose (`--c-pink`) dans la CSS : ne pas surcharger.
 
 ### Accents colorés dans le texte
 
 Dans les menus et descriptions d'événements, on colore des **mots-clés de produits** via `<span class="accent-blue">...</span>` ou `<span class="accent-rose">...</span>` (alternance rose/bleu). On ne colore **pas des phrases entières**, juste le nom du produit (poisson, légume, fromage…).
 
-### Logo du hero (hero-mark)
-
-- `<div class="hero-mark" aria-hidden="true"></div>` (et **non** `<img>`) en position absolute, en bas à droite des hero.
-- Utilise `mask: url("../img/logo-blue.png")` pour découper un dégradé multi-couches **nacré** (rose / ivoire / sable / bleu + sheen blanc diagonal + touche lavande).
-- Si tu veux modifier les reflets, joue uniquement sur les `rgba()` des radial-gradient dans la règle `.hero-mark` — pas sur le PNG.
-
 ### Composants signature
 
-- **`.btn--ghost`** : outline beige, flèche `→` qui s'étire au hover (via `::after`).
-- **`.btn--primary`** : rose vif plein, usage formulaires.
-- **`.btn--dark`** : CTA « Réserver » du header, dégradé nuit.
-- **`.section--blue`** : sections sombres avec radial-gradients rose/bleu + grain SVG inline (variable `--grain`).
-- **`.section--sand`** : bandeaux événements.
+- **`.btn--primary`** : **pill rose** plein (`border-radius: 999px`), hover assombrit.
+- **`.btn--ghost`** : outline beige sur fond clair, même pill rayon.
+- **`.btn--dark`** : pill navy, CTA « Réserver » du header.
+- **`.hero-mark`** : `<div aria-hidden>` en bas à droite du hero, masque PNG (`logo-rose.png`) rempli par un dégradé rose nacré. **Pas** de `<img>`, l'effet dépend du `mask`.
+- **`.section--navy-deep`** : bandeaux sombres (practical home, réservation menu), opacité grain léger.
+- **Cards / encarts** : `border-radius: 18px` (`--radius-lg`), ombre portée douce, pas de gradients hors hero.
+- **Champs de form** : `border-radius: 12px` (`--radius-md`).
+- **`.footer-card`** : fiche « papier » crème, `transform: rotate(-0.4deg)`, ombre double discrète — signature de fin de page.
+- **`.ghost-letter`** : énorme `R` Fraunces italique (`clamp(14rem, 32vw, 26rem)`), opacity 0.08, positionné en absolu dans les sections sombres.
 - **`.reveal`** : opacity 0 → 1 + translateY, déclenché par IntersectionObserver. `data-delay="1|2|3"` pour stagger.
-- **`.event-menu-label`** : petit titre « Menu » en caps bleu au-dessus des listes de plats d'événement.
+- **`.event-menu-label`** + **`.event-menu-card`** : carte menu d'événement avec filet supérieur rose (`border-top: 2px solid var(--c-pink-deep)`).
+
+### Interdits DA
+- Pas de gradient hors `.hero` / `.hero-mark`.
+- Pas d'emoji dans le site (ni copy ni UI).
+- Pas de `border-left` coloré comme accent de carte.
+- Pas de hover « underline avec couleur saturée ».
+- Pas de Caveat dans les titres ou paragraphes — micro-accents uniquement.
 
 ---
 
@@ -109,12 +120,13 @@ Dans les menus et descriptions d'événements, on colore des **mots-clés de pro
 Règles validées avec le client :
 
 1. **« On » plutôt que « nous ».** Parole de salle, pas de brochure.
-2. **Concret plutôt que poétique.** Exemples tangibles (« un anniversaire », « une allergie », « un vigneron à faire goûter ») au lieu d'abstractions (« parenthèses », « quatre mains », « service attentif »).
-3. **Promesse directe.** « promis », « on vous garde une place », « on s'arrange » — pas de tournures passives ou légalistes.
+2. **Concret plutôt que poétique.** Exemples tangibles (« un anniversaire », « une allergie », « un vigneron à faire goûter ») au lieu d'abstractions.
+3. **Promesse directe.** « promis », « on vous garde une place », « on s'arrange ».
 4. **Courts.** Si un paragraphe a plus de deux phrases, c'est suspect. Viser la ligne, pas le bloc.
-5. **Jamais de « craftsmanship »-speak.** Pas d'adjectifs empilés (« sincère et contemporaine »), pas de « bistronomie artisanale », pas de « avec soin ». On dit ce qu'on fait, on ne se décrit pas.
+5. **Jamais de « craftsmanship »-speak.** Pas d'adjectifs empilés, pas de « bistronomie artisanale », pas de « avec soin » (sauf footer legal).
+6. **Pas de nom de chef.** On parle « en mémoire de Rose », « une cuisine guidée par la saison » — jamais « le chef Untel ». ROSE est un prénom choisi, une façon de cuisiner.
 
-**Mot interdit** : « chichi » est **autorisé** (déjà validé dans H1 accueil). **Banni** : « parenthèse », « moment suspendu », « avec soin » (sauf footer legal), « living », adjectifs doublés.
+**Banni** : « parenthèse », « moment suspendu », « avec soin » (sauf footer), « living », adjectifs doublés.
 
 Quand tu récris, d'abord simplifier, ensuite humaniser.
 
@@ -123,26 +135,40 @@ Quand tu récris, d'abord simplifier, ensuite humaniser.
 ## Pages & éléments clés
 
 ### Accueil (`index.html` / `en/index.html`)
-- Hero plein : eyebrow identité + H1 + lead court + deux boutons CTA ghost.
-- Bandeau événements sable (repris aussi sur `evenements.html`).
-- Bandeau pratique 3-colonnes (adresse / horaires / réservation).
-- Section newsletter bleu nuit avec form email.
+- Hero plein navy : eyebrow + H1 (« Une cuisine simple, *mémoire* de Rose. » / « Simple cooking, *in memory* of Rose. ») + lead court + 2 CTA (primary + ghost).
+- Section **signature** : 2-col, texte gauche (« Un prénom, une façon de cuisiner. ») + card droite avec 3 items (carte courte / cave vivante / table qu'on revient).
+- **Info-band** 4-col : Le chef (générique, pas de nom) · Adresse · Table (Mardi→Samedi) · Instagram.
+- Section **events** : 3 événements en 3-col (date / contenu / menu-card).
+- Section **practical** navy-deep avec ghost-letter R.
 
 ### Menu (`menu.html` / `en/menu.html`)
-- Hero court + carte en 4 sections (Entrées, Plats, Desserts, Cave).
-- Chaque plat : titre stylé + points de conduite `.menu-item-dots` + prix à droite.
+- Hero court navy + carte en 4 sections (Entrées / Plats / Desserts / Cave).
+- Chaque plat : `.menu-item-head` flex (name + dots + prix) + `.menu-item-desc` en dessous.
 - Note de bas de carte sur allergies.
-- Section réservation finale sur fond bleu.
+- Section réservation finale `.section--navy-deep` avec `btn--primary`.
 
 ### Événements (`evenements.html` / `en/events.html`)
-- Hero court + liste verticale de 3 événements.
-- Chaque event : date (jour + mois), titre, description, parfois menu détaillé, tag.
-- Bandeau pratique 3-colonnes en pied (réserver / privatisation / contact).
+- Hero court navy + liste verticale de 3 événements.
+- Chaque event : 3-col `160px 1.2fr 1fr` → bloc date (day / month / time) · bloc contenu (title / sub / desc / location / CTA) · `event-menu-card`.
+- Section practical 3-col en pied (réserver / privatisation / contact).
 
 ### Contact (`contact.html` / `en/contact.html`)
-- Hero court.
-- Form 2 colonnes : formulaire gauche (nom/email/sujet/message + consent) + aside droite (adresse/horaires/tel/email/OpenTable + map iframe OSM).
-- Form submit est simulé (no backend) — `setTimeout` + message OK.
+- Hero court navy.
+- Grid 2-col : formulaire gauche (nom/email/sujet/message + consent) + aside droite (adresse / horaires / email / OpenTable + map iframe OSM). **Pas de téléphone.**
+- Form submit simulé (no backend).
+
+### Footer (toutes pages)
+- `.footer-card` papier crème, `rotate(-0.4deg)`, wordmark en haut, tag « Bistronomie marseillaise » / « Marseille bistronomy », 3-col (Venir / Écrire / Suivre), ligne legal + micro-accent Caveat.
+
+---
+
+## Horaires officiels (alignés DA)
+
+- **Mardi → Vendredi** : 12h–14h · 19h30–22h
+- **Samedi soir** : 19h30–22h30
+- **Fermé dimanche et lundi**
+
+Répercutés dans : `index.html`/`en/index.html` JSON-LD Restaurant + info-band, `contact.html`/`en/contact.html` aside. Toute modif doit passer par les 4 endroits.
 
 ---
 
@@ -150,7 +176,7 @@ Quand tu récris, d'abord simplifier, ensuite humaniser.
 
 Attention à maintenir cohérent avec le HTML visible :
 
-- **Restaurant** (home) : tél, email, prix, hours, coordonnées geo.
+- **Restaurant** (home) : email, prix, hours (Tue-Sat), coordonnées geo. **Pas de `telephone`.**
 - **Menu** (menu page) : chaque section avec prix en EUR.
 - **Event** graph (events page) : chaque événement avec startDate ISO, location, offers quand applicable.
 - **BreadcrumbList** sur pages intérieures.
@@ -162,8 +188,7 @@ Si tu changes un prix ou un horaire dans le HTML, **répercute dans le JSON-LD**
 ## Déploiement
 
 - **GitHub** : remote `https://github.com/1313nrv/rose-marseille.git`, branche `main`.
-- **Hébergement** : Cloudflare Pages / Workers, auto-deploy sur push `main` (domaine live actuel : `rose-marseille.hello-sujib.workers.dev`).
-- **Ancien hébergement Netlify** : abandonné (credits épuisés). Ne pas réintroduire `netlify.toml` ni `netlify/`.
+- **Hébergement** : Cloudflare Pages / Workers, auto-deploy sur push `main`.
 - **DNS final prévu** : `rose-marseille.fr` (présent dans canonical + JSON-LD).
 
 Workflow standard : edit → `git add -A` → `git commit -m "…"` → `git push origin main`. Cloudflare redéploie en ~30-60s.
@@ -186,28 +211,25 @@ git config user.name "1313nrv"
 - **Pas d'analytics / trackers.** Engagement client.
 - **Deux langues synchronisées.** Toute modif de copie / prix / horaire doit être faite dans les deux langues.
 - **Logo hero = mask CSS, pas `<img>`.** L'effet nacré dépend de ça.
-- **Lang switch header : FR · EN · IG.** L'ordre et la présence du lien Instagram dans le switch sont validés.
+- **Lang switch dans `.header-cta`.** Ordre header-cta : `lang-switch` · `ig-link` · `btn--dark Réserver`. Ne pas fusionner avec la nav primaire.
+- **Pas de téléphone.** Tant que pas de numéro officiel, aucune référence (header, footer, JSON-LD, main.js CONFIG).
+- **Pas de nom de chef.** Le chef reste anonyme dans la copie — « mémoire de Rose », « cuisine guidée par la saison ».
 
 ---
 
 ## Points de vigilance courants
 
-- **Les HTML ont des guillemets typographiques** (`'`, `'`, `«`, `»`, `—`, etc.). Quand tu édites via sed/Edit, attention à copier l'exact caractère — les apostrophes ASCII `'` vs `'` cassent les `Edit` exact-match.
+- **Les HTML ont des guillemets typographiques** (`'`, `'`, `«`, `»`, `—`, etc.). Quand tu édites via Edit, attention à copier l'exact caractère — les apostrophes ASCII `'` vs `'` cassent les `Edit` exact-match.
 - **EOL warnings** : Git convertit LF ↔ CRLF au push (Windows). Les warnings sont OK, pas besoin de les corriger.
 - **Pages ont des chemins relatifs différents** selon leur profondeur : racine utilise `assets/...`, `en/*.html` utilise `../assets/...`. Ne pas mélanger.
 - **`aria-current="page"`** sur le lien nav actif de chaque page (et `aria-current="true"` sur la langue active dans le switch).
-- **Liens langue croisés** : FR pointe vers `en/xxx.html`, EN pointe vers `../xxx.html` ou `/xxx.html`.
+- **Liens langue croisés** : FR pointe vers `en/xxx.html`, EN pointe vers `/xxx.html` ou `../xxx.html`.
 
 ---
 
 ## Quand on change de ton
 
-Si le client demande « trop poétique » / « trop robot » / « too much » → appliquer les 5 règles de la section **Voix éditoriale** ci-dessus. L'historique des réécritures :
-- Hero accueil est passé de *« Une table marseillaise, sincère et contemporaine »* → *« Marseille à table, sans chichi »*.
-- Les leads de 3 lignes ont été systématiquement réduits à 1 phrase.
-- Les « privatisation, presse, proposition de vigneron·ne » remplacés par « anniversaire, allergie, vigneron à faire goûter ».
-
-Si tu dois arbitrer, préférer **plus court** à **plus riche**.
+Si le client demande « trop poétique » / « trop robot » / « too much » → appliquer les 6 règles de la section **Voix éditoriale** ci-dessus. Si tu dois arbitrer, préférer **plus court** à **plus riche**.
 
 ---
 
@@ -217,4 +239,4 @@ Site propriété du restaurant ROSE. Design & dev : travail itératif avec Claud
 
 ---
 
-*Dernière mise à jour : 2026-04-20.*
+*Dernière mise à jour : 2026-04-21 — déploiement DA (palette navy/pink/cream, Fraunces/Crimson Pro/Caveat, cards radius 18, pill buttons).*

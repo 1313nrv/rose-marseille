@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Menu — ROSE · Marseille bistronomy</title>
 <meta name="description" content="ROSE menu: starters, mains, desserts and wine. A short, Mediterranean-led list, rewritten with each delivery.">
-<meta name="theme-color" content="#1E3AAE">
+<meta name="theme-color" content="#1B2A5E">
 
 <link rel="canonical" href="https://rose-marseille.fr/en/menu.html">
 <link rel="alternate" hreflang="fr" href="https://rose-marseille.fr/menu.html">
@@ -15,13 +15,16 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Menu — ROSE · Marseille">
-<meta property="og:description" content="Short, Mediterranean-led menu rewritten with each delivery.">
+<meta property="og:description" content="Short, seasonal menu, rewritten with each delivery.">
 <meta property="og:url" content="https://rose-marseille.fr/en/menu.html">
 <meta property="og:image" content="https://rose-marseille.fr/assets/img/logo-wordmark.png">
 
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="../site.webmanifest">
-<link rel="preload" href="../assets/fonts/Cormorant-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Crimson+Pro:ital,wght@0,400;0,500;1,400;1,500&family=Caveat:wght@400;600&display=swap">
 <link rel="preload" href="../assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 
@@ -65,7 +68,7 @@
       "@type": "MenuSection",
       "name": "Cellar & drinks",
       "hasMenuItem": [
-        { "@type": "MenuItem", "name": "Natural wine by the glass", "description": "Rotating selection, from growers we trust, from.", "offers": { "@type": "Offer", "price": "7", "priceCurrency": "EUR" } },
+        { "@type": "MenuItem", "name": "Natural wine by the glass", "description": "Rotating selection, from growers we trust.", "offers": { "@type": "Offer", "price": "7", "priceCurrency": "EUR" } },
         { "@type": "MenuItem", "name": "ROSE signature cocktail", "description": "Provençal gin, grapefruit, rosemary.", "offers": { "@type": "Offer", "price": "12", "priceCurrency": "EUR" } },
         { "@type": "MenuItem", "name": "Specialty coffee", "description": "Marseille roast — filter or espresso.", "offers": { "@type": "Offer", "price": "4", "priceCurrency": "EUR" } },
         { "@type": "MenuItem", "name": "Garden infusion", "description": "Verbena, mint, lemon thyme.", "offers": { "@type": "Offer", "price": "5", "priceCurrency": "EUR" } }
@@ -92,7 +95,7 @@
 <header class="site-header" role="banner">
   <div class="wrap header-inner">
     <a class="brand" href="/en/" aria-label="ROSE — home">
-      <img class="brand-logo" src="../assets/img/logo-wordmark.png" alt="ROSE — Marseille" width="auto" height="142">
+      <img class="brand-logo" src="../assets/img/logo-wordmark.png" alt="ROSE — Marseille" width="auto" height="108">
     </a>
     <nav class="nav-primary" id="nav-primary" aria-label="Primary">
       <ul>
@@ -101,12 +104,13 @@
         <li><a href="events.html">Events</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="lang-switch" aria-label="Language">
-        <a href="/menu.html" hreflang="fr">FR</a><span>·</span>
-        <a href="menu.html" aria-current="true" hreflang="en">EN</a><span>·</span><a class="ig-link" href="https://www.instagram.com/rose.castellane" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-      </div>
     </nav>
     <div class="header-cta">
+      <div class="lang-switch" aria-label="Language">
+        <a href="/menu.html" hreflang="fr">FR</a><span>·</span>
+        <a href="menu.html" aria-current="true" hreflang="en">EN</a>
+      </div>
+      <a class="ig-link" href="https://www.instagram.com/rose.castellane" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg></a>
       <a class="btn btn--dark" data-opentable href="https://www.opentable.fr/r/rose-marseille">Book</a>
     </div>
   </div>
@@ -119,109 +123,111 @@
     <div class="wrap hero-inner">
       <p class="crumbs reveal"><a href="/en/">Home</a> · <span aria-current="page">Menu</span></p>
       <p class="eyebrow reveal">The menu</p>
-      <h1 class="reveal"><em>Short,</em> true to the market.</h1>
+      <h1 class="reveal"><em>Short,</em><br>true to the market.</h1>
       <p class="hero-lead reveal">Seasonal produce, a few dishes we love, a cellar we picked ourselves.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
+      <div class="menu-grid">
 
-      <section class="menu-section reveal" aria-labelledby="sec-starters">
-        <h2 id="sec-starters"><span class="num">I</span>Starters</h2>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Line-caught <span class="accent-blue">red mullet</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€18</span></div>
-            <p class="menu-item-desc">Crisp scales, confit fennel, saffron bone jus.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Heirloom tomatoes</span> from Aix</span><span class="menu-item-dots"></span><span class="menu-item-price">€16</span></div>
-            <p class="menu-item-desc">Puglian burrata, basil, Vallée des Baux olive oil.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Warm <span class="accent-blue">panisses</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€12</span></div>
-            <p class="menu-item-desc">Camargue chickpeas, sea salt, garden lemon.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Slow-cooked egg</span>, green asparagus</span><span class="menu-item-dots"></span><span class="menu-item-price">€15</span></div>
-            <p class="menu-item-desc">Bottarga vinaigrette, sourdough toast.</p>
-          </li>
-        </ul>
-      </section>
+        <section class="menu-section reveal" aria-labelledby="sec-starters">
+          <h2 id="sec-starters">Starters</h2>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Line-caught <span class="accent-blue">red mullet</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€18</span></div>
+              <p class="menu-item-desc">Crisp scales, confit fennel, saffron bone jus.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Heirloom tomatoes</span> from Aix</span><span class="menu-item-dots"></span><span class="menu-item-price">€16</span></div>
+              <p class="menu-item-desc">Puglian burrata, basil, Vallée des Baux olive oil.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Warm <span class="accent-blue">panisses</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€12</span></div>
+              <p class="menu-item-desc">Camargue chickpeas, sea salt, garden lemon.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Slow-cooked egg</span>, green asparagus</span><span class="menu-item-dots"></span><span class="menu-item-price">€15</span></div>
+              <p class="menu-item-desc">Bottarga vinaigrette, sourdough toast.</p>
+            </li>
+          </ul>
+        </section>
 
-      <section class="menu-section reveal" aria-labelledby="sec-mains">
-        <h2 id="sec-mains"><span class="num">II</span>Mains</h2>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Wild <span class="accent-blue">sea bass</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€34</span></div>
-            <p class="menu-item-desc">Poivrade artichokes, ink butter, charred lemon.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Sisteron <span class="accent-rose">lamb</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€32</span></div>
-            <p class="menu-item-desc">12-hour shoulder, smoked aubergine, savory jus.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Petit épeautre <span class="accent-rose">risotto</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€26</span></div>
-            <p class="menu-item-desc">Trumpet courgettes, 24-month Parmesan, fresh almonds.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Wood-fired <span class="accent-blue">octopus</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€29</span></div>
-            <p class="menu-item-desc">Ratte potatoes with rocket, light aïoli, Taggiasca olives.</p>
-          </li>
-        </ul>
-      </section>
+        <section class="menu-section reveal" aria-labelledby="sec-mains">
+          <h2 id="sec-mains">Mains</h2>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Wild <span class="accent-blue">sea bass</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€34</span></div>
+              <p class="menu-item-desc">Poivrade artichokes, ink butter, charred lemon.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Sisteron <span class="accent-rose">lamb</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€32</span></div>
+              <p class="menu-item-desc">12-hour shoulder, smoked aubergine, savory jus.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Petit épeautre <span class="accent-rose">risotto</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€26</span></div>
+              <p class="menu-item-desc">Trumpet courgettes, 24-month Parmesan, fresh almonds.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Wood-fired <span class="accent-blue">octopus</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€29</span></div>
+              <p class="menu-item-desc">Ratte potatoes with rocket, light aïoli, Taggiasca olives.</p>
+            </li>
+          </ul>
+        </section>
 
-      <section class="menu-section reveal" aria-labelledby="sec-desserts">
-        <h2 id="sec-desserts"><span class="num">III</span>Desserts</h2>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Gariguette strawberries</span>, fromage blanc sorbet</span><span class="menu-item-dots"></span><span class="menu-item-price">€12</span></div>
-            <p class="menu-item-desc">Buckwheat crumble, lemon basil.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Venezuelan <span class="accent-rose">chocolate</span>, Piedmont hazelnut</span><span class="menu-item-dots"></span><span class="menu-item-price">€13</span></div>
-            <p class="menu-item-desc">Whipped ganache, house praliné, sea salt.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Black fig</span> thin tart</span><span class="menu-item-dots"></span><span class="menu-item-price">€12</span></div>
-            <p class="menu-item-desc">Lavender-honey ice cream, toasted almonds.</p>
-          </li>
-        </ul>
-      </section>
+        <section class="menu-section reveal" aria-labelledby="sec-desserts">
+          <h2 id="sec-desserts">Desserts</h2>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Gariguette strawberries</span>, fromage blanc sorbet</span><span class="menu-item-dots"></span><span class="menu-item-price">€12</span></div>
+              <p class="menu-item-desc">Buckwheat crumble, lemon basil.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Venezuelan <span class="accent-rose">chocolate</span>, Piedmont hazelnut</span><span class="menu-item-dots"></span><span class="menu-item-price">€13</span></div>
+              <p class="menu-item-desc">Whipped ganache, house praliné, sea salt.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Black fig</span> thin tart</span><span class="menu-item-dots"></span><span class="menu-item-price">€12</span></div>
+              <p class="menu-item-desc">Lavender-honey ice cream, toasted almonds.</p>
+            </li>
+          </ul>
+        </section>
 
-      <section class="menu-section reveal" aria-labelledby="sec-drinks">
-        <h2 id="sec-drinks"><span class="num">IV</span>Cellar &amp; drinks</h2>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Natural wine</span> by the glass</span><span class="menu-item-dots"></span><span class="menu-item-price">from €7</span></div>
-            <p class="menu-item-desc">Rotating selection from growers we trust — often with no added sulphur.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">ROSE <span class="accent-rose">signature cocktail</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€12</span></div>
-            <p class="menu-item-desc">Provençal gin, grapefruit, rosemary.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Specialty <span class="accent-rose">coffee</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€4</span></div>
-            <p class="menu-item-desc">Marseille roast — filter or espresso.</p>
-          </li>
-          <li class="menu-item">
-            <div class="menu-item-head"><span class="menu-item-name">Garden <span class="accent-blue">infusion</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€5</span></div>
-            <p class="menu-item-desc">Verbena, mint, lemon thyme.</p>
-          </li>
-        </ul>
-      </section>
+        <section class="menu-section reveal" aria-labelledby="sec-drinks">
+          <h2 id="sec-drinks">Cellar &amp; drinks</h2>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name"><span class="accent-rose">Natural wine</span> by the glass</span><span class="menu-item-dots"></span><span class="menu-item-price">from €7</span></div>
+              <p class="menu-item-desc">Rotating selection from growers we trust — often with no added sulphur.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">ROSE <span class="accent-rose">signature cocktail</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€12</span></div>
+              <p class="menu-item-desc">Provençal gin, grapefruit, rosemary.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Specialty <span class="accent-rose">coffee</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€4</span></div>
+              <p class="menu-item-desc">Marseille roast — filter or espresso.</p>
+            </li>
+            <li class="menu-item">
+              <div class="menu-item-head"><span class="menu-item-name">Garden <span class="accent-blue">infusion</span></span><span class="menu-item-dots"></span><span class="menu-item-price">€5</span></div>
+              <p class="menu-item-desc">Verbena, mint, lemon thyme.</p>
+            </li>
+          </ul>
+        </section>
 
-      <p class="menu-note">Allergy, special diet, craving? Just ask — we’ll work it out, really.</p>
+        <p class="menu-note">Allergy, special diet, craving? Just ask — we'll work it out, really.</p>
 
+      </div>
     </div>
   </section>
 
-  <section class="section section--blue">
+  <section class="section section--navy-deep">
     <div class="wrap newsletter reveal">
       <p class="eyebrow">Reservations</p>
-      <h2>The table is waiting.</h2>
-      <p>Lunch, dinner, chef’s table: we’ll save you a seat.</p>
-      <p><a class="btn btn--ghost" data-opentable href="https://www.opentable.fr/r/rose-marseille">Book on OpenTable</a></p>
+      <h2>The table <em>is waiting.</em></h2>
+      <p>Lunch, dinner, chef's table: we'll save you a seat.</p>
+      <p><a class="btn btn--primary" data-opentable href="https://www.opentable.fr/r/rose-marseille">Book on OpenTable →</a></p>
     </div>
   </section>
 
@@ -229,39 +235,33 @@
 
 <footer class="site-footer" role="contentinfo">
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h4>ROSE</h4>
-        <p>Marseille bistronomy. A short menu, a living cellar, a stone’s throw from place Castellane.</p>
+    <div class="footer-card">
+      <img class="footer-wordmark" src="../assets/img/logo-wordmark.png" alt="ROSE">
+      <p class="footer-tag">Marseille bistronomy</p>
+      <div class="footer-grid">
+        <div>
+          <p class="col-title">Find us</p>
+          8 rue Louis Maurel<br>
+          <span class="col-muted">13006 Marseille</span>
+          <p class="col-note">↳ Castellane metro, 4-min walk.</p>
+        </div>
+        <div>
+          <p class="col-title">Write</p>
+          <a href="mailto:bonjour@rose-marseille.fr">bonjour@rose-marseille.fr</a><br>
+          <span class="col-muted">we reply the same day</span>
+          <p class="col-note">(or next lunchtime).</p>
+        </div>
+        <div>
+          <p class="col-title">Follow</p>
+          <a href="https://www.instagram.com/rose.castellane" target="_blank" rel="noopener noreferrer">@rose.castellane</a><br>
+          <a data-opentable href="https://www.opentable.fr/r/rose-marseille" class="col-muted">OpenTable</a> · <a href="/menu.html" class="col-muted">Français</a>
+          <p class="col-note">what's in, what's on the chalkboard.</p>
+        </div>
       </div>
-      <div>
-        <h4>Visit</h4>
-        <ul>
-          <li><a href="/en/">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="footer-sign">
+        <span>© <span data-year>2026</span> ROSE — Marseille. All rights reserved.</span>
+        <span class="script">made with care — no cookies, no trackers.</span>
       </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li>8 rue Louis Maurel<br>13006 Marseille</li>
-          <li><a href="mailto:bonjour@rose-marseille.fr">bonjour@rose-marseille.fr</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Follow</h4>
-        <ul>
-          <li><a href="https://www.instagram.com/rose.castellane" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a data-opentable href="https://www.opentable.fr/r/rose-marseille">OpenTable</a></li>
-          <li><a href="/menu.html">Français</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-legal">
-      <span>© <span data-year>2026</span> ROSE — Marseille. All rights reserved.</span>
-      <span>Crafted with care · no cookies, no trackers.</span>
     </div>
   </div>
 </footer>
