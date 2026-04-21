@@ -741,7 +741,7 @@ p { margin: 0 0 1rem; }
   box-shadow: var(--shadow-card);
   border-radius: var(--radius-lg);
 }
-.footer-card .footer-wordmark { height: clamp(120px, 14vw, 180px); width: auto; }
+.footer-card .footer-wordmark { height: clamp(180px, 20vw, 260px); width: auto; }
 .footer-card .footer-tag {
   font-family: var(--ff-sans);
   font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
