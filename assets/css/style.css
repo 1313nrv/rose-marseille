@@ -360,9 +360,9 @@ p { margin: 0 0 1rem; }
 /* ---------- Signature (2-col : La maison / 3 repères) */
 .signature {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2rem, 4vw, 3rem);
-  align-items: start;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
 }
 .signature-text p {
   font-size: 1.15rem;
@@ -377,22 +377,18 @@ p { margin: 0 0 1rem; }
   padding: clamp(2rem, 3vw, 3rem) clamp(2rem, 3vw, 3.25rem);
   border-radius: var(--radius-lg);
   border-left: 3px solid var(--c-pink-deep);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
-  align-items: start;
 }
 .signature-card .item {
-  padding: 0 1.5rem 0 0;
-  border-right: 1px solid var(--c-rule);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--c-rule);
 }
-.signature-card .item:last-child { border-right: none; padding-right: 0; }
+.signature-card .item:last-child { border-bottom: none; }
 .signature-card .item-title {
   font-family: var(--ff-display); font-style: italic; font-weight: 400;
-  font-size: 1.35rem; color: var(--c-ink); margin-bottom: 6px;
+  font-size: 1.45rem; color: var(--c-ink); margin-bottom: 6px;
   letter-spacing: -0.01em;
 }
-.signature-card .item-desc { font-size: 0.9rem; color: var(--c-ink-soft); line-height: 1.55; }
+.signature-card .item-desc { font-size: 0.95rem; color: var(--c-ink-soft); line-height: 1.55; }
 
 /* ---------- Info band 4-col navy */
 .info-band {
