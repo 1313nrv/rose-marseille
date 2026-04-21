@@ -830,7 +830,12 @@ p { margin: 0 0 1rem; }
   .event-menu-card { grid-column: 1 / -1; margin-top: 0.5rem; }
   .event-date .day { font-size: 3.5rem; }
 
-  .practical { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+  .practical { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .practical h3 { font-size: clamp(1rem, 3.4vw, 1.3rem); line-height: 1.2; }
+  .practical .italique { font-size: 0.95rem; }
+  .practical p { font-size: 0.82rem; line-height: 1.5; }
+  .practical .label, .practical .eyebrow { font-size: 0.55rem; letter-spacing: 0.18em; margin-bottom: 0.55rem; }
+  .practical .btn { padding: 9px 14px; font-size: 0.62rem; letter-spacing: 0.12em; }
   .ghost-letter { font-size: 16rem; bottom: -100px; right: -30px; }
 
   .contact-grid { grid-template-columns: 1fr; }
@@ -860,13 +865,19 @@ p { margin: 0 0 1rem; }
   .section { padding: 3rem 0; }
   .section--tight { padding: 2.25rem 0; }
 
-  /* Events stack complet */
-  .event { grid-template-columns: 1fr; gap: 0.9rem; padding: 1.75rem 0; }
-  .event-date { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+  /* Events : on garde format bandeau — date à gauche + contenu à droite,
+     menu-card en pleine largeur dessous. Jamais de colonne unique. */
+  .event { grid-template-columns: 88px 1fr; gap: 0.75rem 1.25rem; padding: 1.75rem 0; }
   .event-date .day { font-size: 2.75rem; }
-  .event-date .month { font-size: 1.15rem; margin-top: 0; }
-  .event-date .time { margin-top: 0; }
-  .event-menu-card { margin-top: 0.5rem; padding: 1.25rem 1.25rem 1rem; }
+  .event-date .month { font-size: 1.05rem; }
+  .event-date .time { font-size: 0.62rem; letter-spacing: 0.12em; }
+  .event-title { font-size: clamp(1.2rem, 4.5vw, 1.45rem); margin-bottom: 0.45rem; }
+  .event-sub { font-size: 0.98rem; margin-bottom: 0.45rem; }
+  .event-desc { font-size: 0.92rem; line-height: 1.55; }
+  .event-location { margin-top: 0.9rem; font-size: 0.62rem; letter-spacing: 0.14em; }
+  .event-menu-card { margin-top: 0.75rem; padding: 1.1rem 1.25rem 0.9rem; }
+  .event-menu { font-size: 0.88rem; }
+  .event-menu-label { font-size: 0.62rem; letter-spacing: 0.16em; }
 
   /* Menu */
   .menu-section h2 { font-size: 1.8rem; }
