@@ -882,8 +882,8 @@ p { margin: 0 0 1rem; }
   .hero h1 { font-size: clamp(2rem, 9vw, 2.8rem); line-height: 1.05; }
   .hero-lead { font-size: 1rem; }
   .hero-inner { max-width: 100%; }
-  .hero-cta { gap: 10px; margin-top: 1.75rem; max-width: none; }
-  .hero-cta .btn { flex: 0 0 auto; padding: 10px 16px; font-size: 0.58rem; letter-spacing: 0.1em; }
+  .hero-cta { gap: 10px; margin-top: 1.75rem; max-width: 70%; }
+  .hero-cta .btn { flex: 0 0 auto; width: auto; padding: 10px 16px; font-size: 0.58rem; letter-spacing: 0.1em; }
   .hero-mark { width: 180px; opacity: 0.3; right: -40px; top: auto; bottom: -20px; transform: none; }
 
   /* Sections */
