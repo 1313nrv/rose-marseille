@@ -200,6 +200,7 @@ p { margin: 0 0 1rem; }
 .nav-primary ul a { color: var(--c-ink); padding-bottom: 4px; }
 .nav-primary ul a:hover { color: var(--c-pink-deep); }
 .nav-primary ul a[aria-current="page"] { color: var(--c-pink-deep); border-bottom: 1px solid var(--c-pink-deep); }
+.nav-primary .nav-ig { display: none; } /* visible seulement sur mobile */
 
 .lang-switch {
   display: flex; align-items: center; gap: 10px;
@@ -287,7 +288,8 @@ p { margin: 0 0 1rem; }
   line-height: 1.6;
   color: rgba(238,231,218,0.85);
 }
-.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 2.25rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2.25rem; max-width: 440px; }
+.hero-cta .btn { padding: 11px 18px; font-size: 0.66rem; letter-spacing: 0.14em; }
 .hero-cta .btn--ghost { color: var(--c-cream); border-color: rgba(238,231,218,0.4); }
 .hero-cta .btn--ghost:hover { color: var(--c-pink); border-color: var(--c-pink); }
 
@@ -806,13 +808,26 @@ p { margin: 0 0 1rem; }
 
 /* ---------- Responsive */
 @media (max-width: 980px) {
-  /* Header : meme layout que desktop, juste compacte. Logo | nav | FR·EN IG Reserver, sur une ligne. */
-  .header-inner { gap: 14px; padding: 14px 0; }
-  .brand-logo { height: 72px; }
-  .nav-primary ul { font-size: 0.72rem; gap: 16px; }
-  .header-cta { gap: 10px; }
-  .header-cta .btn { padding: 10px 16px; font-size: 0.7rem; letter-spacing: 0.12em; }
-  .lang-switch { font-size: 0.7rem; gap: 6px; }
+  /* Header : flex 2 rangees. Rang 1 : logo | FR/EN Reserver. Rang 2 : nav centree avec IG apres Contact. */
+  .header-inner {
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: space-between;
+    gap: 10px 14px;
+    padding: 12px 0;
+  }
+  .brand { order: 1; }
+  .header-cta { order: 2; gap: 10px; }
+  .nav-primary { order: 3; flex: 1 0 100%; justify-content: space-between; }
+  .nav-primary ul {
+    flex-wrap: wrap; justify-content: space-between;
+    width: 100%;
+    font-size: 0.68rem; gap: 14px 20px;
+  }
+  .header-cta .ig-link { display: none; } /* deplace dans le nav, apres Contact */
+  .nav-primary .nav-ig { display: inline-flex; align-items: center; }
+  .nav-primary .nav-ig a { display: inline-flex; align-items: center; color: var(--c-ink); opacity: 0.75; }
+  .nav-primary .nav-ig a:hover { color: var(--c-pink-deep); opacity: 1; }
+  .lang-switch { font-size: 0.66rem; gap: 6px; }
 
   .signature { grid-template-columns: 1fr; gap: 2rem; }
   /* Carte "La maison" : items côte à côte en bandeau */
@@ -857,13 +872,10 @@ p { margin: 0 0 1rem; }
 
   /* Header tres compact : memes bords que le reste de la page pour alignement */
   .site-header .wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .header-inner { padding: 10px 0; gap: 10px; grid-template-columns: auto 1fr auto; }
-  .brand-logo { height: 54px; }
-  .header-cta { gap: 8px; }
-  .header-cta .btn { padding: 7px 11px; font-size: 0.58rem; letter-spacing: 0.1em; }
-  .header-cta .ig-link svg { width: 16px; height: 16px; }
-  .lang-switch { font-size: 0.58rem; gap: 4px; }
-  .nav-primary ul { font-size: 0.58rem; gap: 10px; letter-spacing: 0.1em; }
+  .header-inner { padding: 10px 0; gap: 8px 10px; }
+  .brand-logo { height: 68px; }
+  .header-cta .btn { padding: 10px 16px; font-size: 0.68rem; letter-spacing: 0.12em; }
+  .nav-primary ul { font-size: 0.64rem; gap: 10px 16px; letter-spacing: 0.12em; }
 
   /* Hero */
   .hero { padding: 2.75rem 0 2.25rem; }
@@ -933,14 +945,9 @@ p { margin: 0 0 1rem; }
 }
 
 @media (max-width: 420px) {
-  .site-header .wrap { padding-left: 1rem; padding-right: 1rem; }
-  .header-inner { gap: 6px; }
-  .header-cta { gap: 5px; }
-  .header-cta .btn { padding: 6px 8px; font-size: 0.52rem; letter-spacing: 0.08em; }
-  .header-cta .ig-link svg { width: 13px; height: 13px; }
-  .lang-switch { font-size: 0.52rem; gap: 3px; }
-  .brand-logo { height: 44px; }
-  .nav-primary ul { font-size: 0.52rem; gap: 7px; letter-spacing: 0.08em; }
+  .site-header .wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .header-cta .btn { padding: 9px 14px; font-size: 0.66rem; }
+  .brand-logo { height: 60px; }
   .hero h1 { font-size: clamp(1.85rem, 10vw, 2.4rem); }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { width: 100%; }
