@@ -823,17 +823,18 @@ p { margin: 0 0 1rem; }
   .lang-switch { font-size: 0.66rem; gap: 6px; }
 
   .signature { grid-template-columns: 1fr; gap: 2rem; }
-  .info-band .grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  /* Bandeaux : auto-fit pour rester "bandeau" tant qu'il y a la place */
+  .info-band .grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.25rem 1.5rem; }
 
   .event { grid-template-columns: 120px 1fr; gap: 1.25rem 1.75rem; padding: 2rem 0; }
   .event-menu-card { grid-column: 1 / -1; margin-top: 0.5rem; }
   .event-date .day { font-size: 3.5rem; }
 
-  .practical { grid-template-columns: 1fr; gap: 2rem; }
+  .practical { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
   .ghost-letter { font-size: 16rem; bottom: -100px; right: -30px; }
 
   .contact-grid { grid-template-columns: 1fr; }
-  .footer-card .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+  .footer-card .footer-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.75rem; }
 }
 
 @media (max-width: 640px) {
@@ -874,16 +875,23 @@ p { margin: 0 0 1rem; }
   .menu-item-dots { display: none; }
   .menu-item-price { margin-left: auto; }
 
-  /* Info-band / signature */
-  .info-band .grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  /* Info-band / signature — on garde 2 colonnes pour l'effet bandeau */
+  .info-band { padding: 1.75rem 0; }
+  .info-band .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem 1.25rem; font-size: 0.82rem; }
+  .info-band .label { font-size: 0.58rem; margin-bottom: 0.3rem; }
   .signature-card { padding: 1.5rem 1.5rem; }
+
+  /* Practical bandeau : on reste à 2 colonnes même étroit */
+  .practical { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 
   /* Contact */
   .contact-aside { padding: 1.5rem; }
 
-  /* Footer */
+  /* Footer : 3 colonnes compactes pour rester en bandeau */
   .footer-card { padding: 1.75rem 1.5rem; }
-  .footer-card .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-card .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; font-size: 0.78rem; }
+  .footer-card .footer-grid .col-title { font-size: 0.6rem; letter-spacing: 0.14em; margin-bottom: 0.45rem; }
+  .footer-card .footer-grid .col-note { margin-top: 0.4rem; font-size: 0.72rem; }
   .footer-card .footer-sign { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 
   /* Ghost R discret sur petit écran */
